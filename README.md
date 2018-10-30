@@ -16,7 +16,7 @@ You may change the app name in *package.json* and *package-lock.json*
 
 ## Folder structure
 
-Everything happens in the `src` folder:
+Everything happens in the *src* folder:
 
 - *app.ts* is the entry point of the app.
 - *Server.ts* holds the Express server.
