@@ -1,0 +1,9 @@
+node_modules
+jsBuilt
+.vscode
+.prettierrc
+tslint.json
+.DS_Store
+.git
+.gitignore
+README.md
