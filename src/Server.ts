@@ -13,7 +13,7 @@ export default class Server {
     this.app = express();
     this.config();
     this.routes();
-    this.startServer(4200);
+    this.startServer();
   }
 
   private config() {
@@ -27,7 +27,8 @@ export default class Server {
     this.app.use(routes);
   }
 
-  private startServer(port: number = 4200) {
+  private startServer() {
+    const port = process.env.PORT || 4200;
     this.app.listen(port, () => {
       console.log(`Server Listening on port ${port}`);
     });
