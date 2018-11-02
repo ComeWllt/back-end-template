@@ -4,16 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && NODE_ENV=production node ./jsBuilt/app.js",
+    "start": "node ./jsBuilt/app.js",
+    "build": "tsc",
     "dev": "tsc --watch | nodemon --inspect ./jsBuilt/app.js --watch jsBuilt",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts'",
-    "buildLocContainer": "docker build --file ./local.Dockerfile -t back-end-template .",
+    "buildLocContainer": "docker build -t back-end-template .",
     "runLocContainer": "docker run --name back-end-template -it -p 4200:4200 -d back-end-template",
-    "bndLoc": "npm run buildLocContainer && npm run runLocContainer",
-    "buildGitlabContainer": "docker build --file ./production.Dockerfile -t registry.gitlab.com/REGISTRY/back-end-template:$npm_package_version .",
+    "bndLoc": "npm run build && npm run buildLocContainer && npm run runLocContainer",
+    "buildGitlabContainer": "docker build -t registry.gitlab.com/REGISTRY/back-end-template:$npm_package_version .",
     "dockerGitlabPush": "docker push registry.gitlab.com/REGISTRY/back-end-template:$npm_package_version",
-    "bndLive": "npm run buildGitlabContainer && npm run dockerGitlabPush"  
+    "bndLive": "npm run build && npm run buildGitlabContainer && npm run dockerGitlabPush"
   },
   "author": "Côme Willot",
   "license": "ISC",
