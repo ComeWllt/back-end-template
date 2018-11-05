@@ -1,7 +1,7 @@
 # Back-End Template
 
 This is a Back-End template I use for my projects.
-You may change the app name in *package.json* and *package-lock.json*
+You may change the app name in *package.json* and *package-lock.json*.
 
 ## Usage
 
@@ -22,7 +22,12 @@ Everything happens in the *src* folder:
 - *Server.ts* holds the Express server.
 - *routes*: This folder holds the different routes.
 
+## Tests
+
+Tests should be added in the _tests_ folder.
+
 ## Main dependencies
 
 - The project is written using [Typescript](typescriptlang.org).
 - It uses [Express](https://github.com/expressjs/express) as Node.js web framework.
+- Tests use [Mocha](https://mochajs.org/#installation) and [Chai](https://www.chaijs.com/).
